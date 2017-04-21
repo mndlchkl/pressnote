@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        <meta charset="utf-8">            <title>                rest epm test            </title>
+        </meta>
+    </head>
+    <body>        <!--Import jQuery-->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript">        </script>
+        <!--Import materialize.js-->
+        <button id="callrest" type="button"> call </button>
+          <button id="call2rest" type="button"> call 2</button>
+           <button id="call3rest" type="button"> call 3</button>
+    </body>
+</html>
+<script>
+    $(function() {
+		console.log('ini jquery');
+	 
+
+	    	  $(' #call3rest').click(function() {
+	    		console.log('calling 3..');
+
+					 var settings = {
+					  "async": true,
+					  "crossDomain": true,
+					  "url": "http://190.121.5.114/SGCC/web/restepms",
+					  "method": "GET",
+					  "headers": {
+					    "cache-control": "no-cache",
+					   // "postman-token": "21c2b5d5-428a-23bc-6603-4c90162d526f"
+					  }
+					}
+
+					$.ajax(settings).done(function (response) {
+					  console.log(response);
+					})
+					.fail( function(xhr, textStatus, errorThrown) {
+				         console.log(xhr.responseText);
+				         console.log(textStatus);
+				    });;
+			 });
+
+
+
+
+});
+</script>
+
+<!--
+
+\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+
+ -->
