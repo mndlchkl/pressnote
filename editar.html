@@ -1,26 +1,30 @@
-
-<div >
+	
 	<h3>{{title}}  </h3>
 
-	<hr>
+	<div>
+		<form>
 
-	<form action="">
-		<label for="header">Encabezado</label>
-		<input type="text" id="header">
+		<label for="header">Encabezado o titulo</label>
+		<input ng-model="note.header" type="text" id="header">
 		<br>
 		<label for="subheader">Sub Encabezado</label>
-		<textarea name="subheader" id="subheader" cols="40" rows="4"></textarea>
+		<textarea ng-model="note.subheader" name="subheader" id="subheader" cols="40" rows="4"></textarea>
 		<br>
 		<label for="body">Texto</label>
-		<textarea name="body" id="body" cols="40" rows="8"></textarea>
+		<textarea ng-model="note.body" name="body" id="body" cols="40" rows="8"></textarea>
 		<br>
-		<hr>
-		<button    type="button" ng-click="charp()" > Publicar </button>
-
+		<label for="link">Url</label>
+		<input ng-model="note.link" type="text" id="link">
+		<br>
+		<label for="pic">Imagen (1000x1000)</label>
+		<input ng-model="note.pic" id="pic" type="file" name="pic" accept="image/*">
+		<br>
+		<br>
+		
+		<button  class="button right"  type="button" ng-click="submit()" > Publicar </button>
+		<span>{{msg}}</span>
+		br
+		<span>{{md}}</span>
 	</form>
-	 
-	   
-
-
 
 </div>
