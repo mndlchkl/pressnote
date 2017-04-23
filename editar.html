@@ -1,29 +1,55 @@
 	
 	<h3>{{title}}  </h3>
-
 	<div>
-		<form>
-
-		<label for="header">Encabezado o titulo</label>
-		<input ng-model="note.header" type="text" id="header">
-		<br>
-		<label for="subheader">Sub Encabezado</label>
-		<textarea ng-model="note.subheader" name="subheader" id="subheader" cols="40" rows="4"></textarea>
-		<br>
-		<label for="body">Texto</label>
-		<textarea ng-model="note.body" name="body" id="body" cols="40" rows="8"></textarea>
-		<br>
-		<label for="link">Url</label>
-		<input ng-model="note.link" type="text" id="link">
-		<br>
+		<form id="postForm">
+	<!-- /*Encabezado*/ -->
+		<div class="row">
+	      <div class="input-field col s12 ">
+	        <input  ng-model="note.header" required class="validate" id="header" name="header" type="text">
+	          <label for="header">Encabezado o titulo</label>
+	        </input>
+	      </div>
+	    </div>
+	<!-- /*SUB Encabezado*/ -->         
+	    <div class="row">
+	      <div class="input-field col s12 ">
+	        <label for="subheader">Sub titulo <span id="subheader_count"></span></label>
+	        <textarea ng-model="note.subheader"  required form="postForm" class="materialize-textarea"  name="subheader" id="subheader"></textarea>
+	      </div>
+	    </div>
+	<!-- /*Texto   Body */ -->
+        <div class="row">
+	      <div class="input-field col s12 ">
+	        <label for="body">Texto <span id="body"></span></label>
+	        <textarea ng-model="note.body"   required form="postForm" class="materialize-textarea"  name="body" id="body"></textarea>
+	      </div>
+	    </div>
+ 	<!-- /* Url */ --> 
+	 	<div class="row">
+	      <div class="input-field col s12 ">
+	        <input ng-model="note.link" type="text" id="link"  >
+	          <label for="link">Url</label>
+	        </input>
+	      </div>
+	    </div>
+	<!-- /* Imagen */ --> 
+		<div class="row">
 		<label for="pic">Imagen (1000x1000)</label>
-		<input ng-model="note.pic" id="pic" type="file" name="pic" accept="image/*">
-		<br>
-		<br>
-		
-		<button  class="button right"  type="button" ng-click="submit()" > Publicar </button>
+		     <div class="input-field col s12 ">
+				<input  file-model="note.pic" id="pic" type="file" name="pic" accept="image/*">
+
+			 </div>
+	    </div>
+<!-- /* Submit */ --> 
+		<div class="row">
+		     <div class="input-field col s12 ">
+			<button  class="button right"  type="button" ng-click="submit()" > Publicar </button>
+
+			 </div>
+	    </div>
+	  		
 		<span>{{msg}}</span>
-		br
+		 
 		<span>{{md}}</span>
 	</form>
 
