@@ -4,6 +4,7 @@ $header= isset($_POST['header']) ? $_POST['header']:NULL  ;
 $subheader= isset($_POST['subheader'])?$_POST['subheader']:NULL;
 $body= isset($_POST['body'])? $_POST['body']:NULL;
 $link=   isset($_POST['link']) ?$_POST['link']:NULL;
+$author=   isset($_POST['author']) ?$_POST['author']:NULL;
 $imagen = isset( $_FILES['pic']) ?  $_FILES['pic']:NULL;
 
 $uploads_dir = 'C:\xampp\htdocs\pressnote\img\notes';
@@ -18,10 +19,11 @@ $name = strtr( $preimg, $unwanted_array );
 $newdir = "$uploads_dir/$name.jpg";
 if ( move_uploaded_file($tmp_name, "$uploads_dir/$name.jpg") ){
 	include('conn.php');
-	$stmt = $mysqli->prepare("INSERT INTO notes(header, subheader, body, url, pic) 
-						 VALUES (?, ?, ?,?,?)");
+	$body= nl2br($body);
+	$stmt = $mysqli->prepare("INSERT INTO notes(header, subheader, body, url, pic,author) 
+						 VALUES (?, ?, ?,?,?,?)");
 
-	$stmt->bind_param("sssss", $header	, $subheader, $body, $link, $newdir);
+	$stmt->bind_param("ssssss", $header	, $subheader, $body, $link, $newdir,$author);
 	$stmt->execute();
 
 	if (! ($stmt->error == '') ) {

@@ -1,6 +1,6 @@
  app.controller('loginCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope) {
      $scope.title = 'Login';
-     $scope.submit = function(){
+   /*  $scope.submit = function(){
        if ($scope.login.username=="admin" && $scope.login.pass=="admin") {
               $rootScope.loggedIn=true;
               $location.path("/home");
@@ -8,9 +8,10 @@
             alert('nope');
           }
 
-    }
-    /* $scope.submit = function() {
+    } */
+     $scope.submit = function() {
          if (($scope.login.username != undefined) && ($scope.login.pass != undefined)) {
+            
              $http({
                  method: 'POST',
                  url: 'api/login.php',
@@ -38,5 +39,5 @@
                  alert(response.data);
              }
          }
-     }*/
+     } 
  }]);

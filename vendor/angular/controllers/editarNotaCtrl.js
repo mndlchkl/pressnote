@@ -8,6 +8,7 @@
           ($scope.note.body == undefined) ? msgVal += ' texto,': ''; //
           ($scope.note.pic == undefined) ? msgVal += ' imagen,': ''; //
           //  ($scope.note.link == undefined) ? msgVal += ' link,': ''; // 
+            ($scope.note.author == undefined) ? msgVal += ' autor,': ''; // 
           if (msgVal == '') {
          
               var formData = new FormData();
@@ -26,11 +27,13 @@
               function successCallback(response) {
                   alert(response.data);
                   $scope.note = {}; // $scope.note = '';
-                  $location.path("/editar");
+                //  $location.path("/editar");
+                   window.scrollTo(0, 0);
               }
 
               function errorCallback(error) {
                   alert(response.data);
+                   window.scrollTo(0, 0);
               }
           } else {
               alert("Falta " + msgVal + " por ingresar!");

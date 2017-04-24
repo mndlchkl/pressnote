@@ -1,26 +1,38 @@
-<h3>{{title}}</h3>
 
+<div class="row">
+<div class="col s6" >
+    <h3>{{title}}</h3>
+</div>
 
-<table>
-	
+<div class="col s6" ><button class="blue btn waves-effect waves-light" ng-click="listar()" > Actualizar listado.</button>
+</div>
 
-<table>
-<tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-    <td>94</td>
-  </tr>
+</div>
+    
+
+<table class="striped" >
+  <thead  > 
+          <tr> 
+              <th>#</th>
+              <th>Arriba</th>
+              <th>Titulo</th> 
+              <th>link</th> 
+              <th>autor</th>
+              <th>fecha de creación</th>
+          </tr> 
+  </thead>  
+   <tr ng-repeat='n in notas'>
+              <td>{{ $index + 1}}  </td>
+
+ <td ng-click="changeup()"  ><input ng-model="chk" type="checkbox"  id="{{ n.id }}"  /><label  > {{ n.up }}</label>   </td>
+              
+              <td>{{ n.header }}  </td>
+ 
+              <td>{{ n.url }}  </td>
+              <td>{{ n.author }}  </td>
+             <td>{{ n.created }}  </td>
+    </tr> 
 
 
 </table>
-</table>
+
