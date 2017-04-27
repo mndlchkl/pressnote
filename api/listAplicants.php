@@ -2,7 +2,7 @@
 
  include('conn.php');
 
-$q = "select * from aplicant"; 
+$q = "select * from aplicant order by created desc"; 
        //ESTE ARRAY ALMACENARA LOS REGISTROS
 
 $datos = array();

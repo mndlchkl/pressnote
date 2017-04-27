@@ -15,7 +15,7 @@
              
               <th>Proyecto</th> 
              
-                <th>Motivacion</th> 
+                <th>Motivación</th> 
                <th>Experiencia</th> 
                  <th>Link trabajos</th> 
 
@@ -24,16 +24,20 @@
           </tr> 
   </thead>  
    <tr ng-repeat='p in postulantes'>
-              <td>{{ $index + 1}}  </td>
-             <td  > "{{ p.project_name }}" &nbsp , Encargado: {{ p.name }} {{ p.last_name }} &nbsp , Correo: {{ p.email }} </td>
+              <td>  <h4>{{ $index + 1}}</h4>    </td>
+             <td  > 
+             <h5>"{{p.project_name}}"</h5> 
+             <br>Encargado: {{ p.name }} {{ p.last_name }} 
+             <br>Correo: {{ p.email }} 
+             </td>
                     
  
                <td> {{ p.motivations }} </td>
                 <td> {{ p.experience }} </td>
                   <td> 
-                   <a target="_blank" href="{{ p.music_work_url }}">{{ p.music_work_url }}     </a>
-                     <a target="_blank" href="{{ p.music_work_url2 }}">{{ p.music_work_url2 }} &nbsp </a>
-                    <a target="_blank" href="{{ p.music_work_url3 }}">{{ p.music_work_url3 }}  &nbsp </a>
+                   <a target="_blank" href="{{ p.music_work_url }}">{{ p.music_work_url }}  <br>   </a>
+                     <a target="_blank" href="{{ p.music_work_url2 }}">{{ p.music_work_url2 }} <br> </a>
+                    <a target="_blank" href="{{ p.music_work_url3 }}">{{ p.music_work_url3 }} <br> </a>
                   </td>
              
               
@@ -42,3 +46,12 @@
 
 
 </table>
+
+<style>
+  td{
+    vertical-align: text-top;
+  }
+
+
+</style>
+

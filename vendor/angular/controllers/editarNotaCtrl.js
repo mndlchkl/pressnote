@@ -1,7 +1,9 @@
   app.controller('EditController', ['$scope', '$http', '$location', function($scope, $http, $location) {
       $scope.title = 'Editar Nota';
+      $scope.msgtxt='Publicar';
       $scope.note = {};
       $scope.submit = function() {
+ 
           msgVal = '';
           ($scope.note.header == undefined) ? msgVal += ' titulo,': ''; //
         //  ($scope.note.subheader == undefined) ? msgVal += ' subtitulo,': ''; //
@@ -10,7 +12,7 @@
           //  ($scope.note.link == undefined) ? msgVal += ' link,': ''; // 
             ($scope.note.author == undefined) ? msgVal += ' autor,': ''; // 
           if (msgVal == '') {
-         
+              $scope.msgtxt='Procesando, espere...';
               var formData = new FormData();
               for (var key in $scope.note) {
                   console.log(key, $scope.note[key]);
@@ -28,11 +30,13 @@
                   alert(response.data);
                   $scope.note = {}; // $scope.note = '';
                 //  $location.path("/editar");
+                   $scope.msgtxt='Publicar';
                    window.scrollTo(0, 0);
               }
 
               function errorCallback(error) {
                   alert(response.data);
+                     $scope.msgtxt='Publicar';
                    window.scrollTo(0, 0);
               }
           } else {

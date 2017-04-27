@@ -1,0 +1,44 @@
+
+<h3> {{title}}</h3>
+
+
+
+	<!-- /* Imagen */ --> 
+		<div class="row"> 
+		 <label for="homepic">Imagen : dimensiones: (1200x800) ; peso < 1mb ; formato : jpg, png </label>
+		     <div class="input-field col s6 ">
+		 		<input  file-model="home.pic" id="homepic" type="file" name="homepic" accept="image/*">	
+			 </div>
+
+ 		 <div class="input-field col s6 ">
+			<button  class="btn waves-effect waves-light right green"  type="button" ng-click="submit()" > Subir </button>
+
+			 </div>
+
+		</div> 
+
+
+	 
+		   
+	   
+
+<table class="striped" >
+  <thead  > 
+          <tr> 
+              <th>#</th>        
+              <th>Estado</th>           
+               <th>Imagen</th> 
+               <th>Posición</th> 
+               <th>Texto</th>   
+           </tr> 
+  </thead>  
+   <tr ng-repeat='img in imgs'>
+              <td>{{ $index + 1}}  </td>
+              <td> {{img.status}} </td>
+              <td> {{ img.image }} </td>
+              <td> {{ img.section }} </td>
+              <td> {{ img.text }} </td>
+  </tr> 
+
+
+</table>

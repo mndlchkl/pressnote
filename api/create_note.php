@@ -6,8 +6,11 @@ $body= isset($_POST['body'])? $_POST['body']:NULL;
 $link=   isset($_POST['link']) ?$_POST['link']:NULL;
 $author=   isset($_POST['author']) ?$_POST['author']:NULL;
 $imagen = isset( $_FILES['pic']) ?  $_FILES['pic']:NULL;
-
+// /test/pressnote/img/notes/Convocatoria.jpg
 $uploads_dir = 'C:\xampp\htdocs\pressnote\img\notes';
+//
+$uploads_dir =  '/var/www/html/test/pressnote/img/notes';
+
 $tmp_name = $_FILES['pic']['tmp_name'];
 $unwanted_array = array(    'Š'=>'S', 'š'=>'s', 'Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E',
                             'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I', 'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U',
@@ -20,10 +23,12 @@ $newdir = "$uploads_dir/$name.jpg";
 if ( move_uploaded_file($tmp_name, "$uploads_dir/$name.jpg") ){
 	include('conn.php');
 	$body= nl2br($body);
+	  $urlimg ="http://ecpm.cl/test/pressnote/img/notes/$name.jpg";
+
 	$stmt = $mysqli->prepare("INSERT INTO notes(header, subheader, body, url, pic,author) 
 						 VALUES (?, ?, ?,?,?,?)");
 
-	$stmt->bind_param("ssssss", $header	, $subheader, $body, $link, $newdir,$author);
+	$stmt->bind_param("ssssss", $header	, $subheader, $body, $link, $urlimg,$author);
 	$stmt->execute();
 
 	if (! ($stmt->error == '') ) {

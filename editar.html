@@ -17,7 +17,23 @@
 	        <textarea ng-model="note.subheader"  required form="postForm" class="materialize-textarea"  name="subheader" id="subheader"></textarea>
 	      </div>
 	    </div>
-	<!-- /*Texto   Body */ -->
+	<!-- /*iNCRUSTAR URL EN BODY*/ -->
+		 <div class="row">
+		 	<div title="Escriba la url que quiere compartir." class="input-field col s4 ">
+			 <input ng-model="url" type="text" id="embedurl"  >
+	          <label for="embedurl">Url a incrustar</label>
+		 	</div>
+		 	<div title="Escriba el texto que se mostrará linkeado." class="input-field col s4 ">
+			 <input ng-model="urltext" type="text" id="texturl"  >
+	          <label for="texturl">Texto linkeado</label>
+		 	</div>
+		 		<div title="Copie y pegue este resultado en la parte del texto que desea que vaya." class="input-field col s4 ">
+			  <label class="black-text" for="texturl"> <code>  &lt;a class="black-text" href="{{url}}" &gt; {{urltext}} &lt;/a&gt; </code>      </label>
+		 	</div>
+		 </div>
+
+		</div>
+<!-- /*Texto   Body */ -->
         <div class="row">
 	      <div class="input-field col s12 ">
 	        <label for="body">Texto (max. 3000 caracteres)<span id="body"></span></label>
@@ -31,7 +47,8 @@
 	          <label for="link">Url</label>
 	    
 	      </div>
-	   
+
+	      
 	<!-- /* Imagen */ --> 
 		 
 		  <label for="pic">Imagen: dimensiones: (1000x1000) ; peso < 2mb ; formato : jpg, png </label>
@@ -53,14 +70,12 @@
 <!-- /* Submit */ --> 
 		<div class="row">
 		     <div class="input-field col s12 ">
-			<button  class="btn waves-effect waves-light right green"  type="button" ng-click="submit()" > Publicar </button>
+			<button  class="btn waves-effect waves-light right green"  type="button" ng-click="submit()" >{{msgtxt}} </button>
+			</div>
 
-			 </div>
 	    </div>
 	  		
-		<span>{{msg}}</span>
-		 
-		<span>{{md}}</span>
+	 
 	</form>
 
 </div>
