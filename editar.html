@@ -17,7 +17,7 @@
 	        <textarea ng-model="note.subheader"  required form="postForm" class="materialize-textarea"  name="subheader" id="subheader"></textarea>
 	      </div>
 	    </div>
-	<!-- /*iNCRUSTAR URL EN BODY*/ -->
+	<!-- /*iNCRUSTAR URL EN BODY*/
 		 <div class="row">
 		 	<div title="Escriba la url que quiere compartir." class="input-field col s4 ">
 			 <input ng-model="url" type="text" id="embedurl"  >
@@ -31,13 +31,15 @@
 			  <label class="black-text" for="texturl"> <code>  &lt;a class="black-text" href="{{url}}" &gt; {{urltext}} &lt;/a&gt; </code>      </label>
 		 	</div>
 		 </div>
+		</div>  -->
+	
 
-		</div>
 <!-- /*Texto   Body */ -->
         <div class="row">
 	      <div class="input-field col s12 ">
-	        <label for="body">Texto (max. 3000 caracteres)<span id="body"></span></label>
-	        <textarea ng-model="note.body"   required form="postForm" class="materialize-textarea"  name="body" id="body"></textarea>
+	       <label for="body">Texto  <span id="body"></span></label> <br>
+	        <textarea ng-model="note.body"   required form="postForm" class="materialize-textarea"  name="editor1" id="body"></textarea>
+
 	      </div>
 	    </div>
  	<!-- /* Url */ --> 
@@ -79,3 +81,12 @@
 	</form>
 
 </div>
+
+<script>
+$(document).ready(function(){ 
+	
+
+  
+  // CKEDITOR.instances.editor1.setData( savedNota );
+   }); 
+</script>

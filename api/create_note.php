@@ -8,8 +8,7 @@ $author=   isset($_POST['author']) ?$_POST['author']:NULL;
 $imagen = isset( $_FILES['pic']) ?  $_FILES['pic']:NULL;
 // /test/pressnote/img/notes/Convocatoria.jpg
 $uploads_dir = 'C:\xampp\htdocs\pressnote\img\notes';
-//
-$uploads_dir =  '/var/www/html/test/pressnote/img/notes';
+//$uploads_dir =  '/var/www/html/test/pressnote/img/notes';
 
 $tmp_name = $_FILES['pic']['tmp_name'];
 $unwanted_array = array(    'Š'=>'S', 'š'=>'s', 'Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E',
