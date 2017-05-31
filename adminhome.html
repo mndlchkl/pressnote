@@ -1,44 +1,107 @@
-
+  <!-- 
 <h3> {{title}}</h3>
+<br>
+/* Imagen */ --> 
+
+<div class="card">
+<h3>  Inicio del sitio</h3>
+  <div class="row">
+       <div class="col m12">
+          <div class="input-field col m6 ">
+            <input ng-model="home.titulo1" type="text" id="titulo1" value = "{{home.titulo1}}"  >
+              <label for="titulo1">Titulo 1</label>
+          </div>
+   
+           <div class="input-field col m6 ">
+            <input ng-model="home.titulo2" type="text" id="titulo2" value = "{{home.titulo2}}"  >
+              <label for="titulo2">Titulo 2</label>
+          </div>
+        </div>
+  </div>
+  <div class="row">
+       <div class="col m12">
+        <div class="input-field col m6">
+            <label for="ini1">Primer parrafo<span id="ini1"></span></label>
+            <textarea ng-model="home.ini1"  required form="postForm" class="materialize-textarea"  name="ini1" id="ini1">{{home.ini1}}</textarea>
+          </div>
+   
+          <div class="input-field col m6">
+            <label for="ini2">Segundo Parrafo<span id="ini2"></span></label>
+            <textarea ng-model="home.ini2"  required form="postForm" class="materialize-textarea"  name="ini2" id="ini2">{{home.ini2}}</textarea>
+          </div>
+        </div>
+  </div>
+
+  <div class="row">
+       <div class="col m12">
+          <div class="input-field col m6 ">
+            <input ng-model="home.url1" type="text" id="url1" value = "{{home.url1}}"   >
+              <label for="url1">Url Imagen parrafo 1</label>
+          </div>
+   
+           <div class="input-field col m6 ">
+            <input ng-model="home.url2" type="text" id="url2" value = "{{home.url2}}"  >
+              <label for="url2">Url Imgaen Parrafo 2</label>
+          </div>
+        </div>
+  </div>
+   <div class="row">
+    <div class="input-field col s6 ">
+        <button  class="btn waves-effect waves-light right blue"  type="button" ng-click="updateHome()" > Actualizar </button>
+    </div>
+  </div>
+  <br>
+</div>
+
+<br>
+
+<div class="card">
+<h3>  Subir imagen</h3>
+  <div class="row">
+    <div class="input-field col m6 ">
+          <label for="file">  </label>
+          <input  file-model="file.pic" id="file" type="file" name="file" accept="image/*">  
+    </div>
+
+     <div class="input-field col m6 ">
+          <input ng-model="file.desc" type="text" id="desc"  >
+          <label for="desc">Descripción de la imagen</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6 ">
+           <button  class="btn waves-effect waves-light right green"  type="button" ng-click="upload()" > Subir </button>
+    </div>
+  </div>
+<br>
+</div>
+
+<div class="card">
+<h3> Recursos</h3>
+{{sop}}
+      <table class="striped" >
+        <thead  > 
+                <tr> 
+                    <th>#</th>        
+                    <th>Url Imagen</th>           
+                     <th>Descripción</th> 
+                    
+                 </tr> 
+        </thead>  
+         <tr ng-repeat='rec in recursos'>
+                    <td>{{ $index + 1}}  </td>
+                   <td> 
+                   <a target="_blank" href="{{ rec.url }}">{{rec.url}}</a>
+                    
+                  </td>
+                    <td> {{ rec.descripcion }} </td>
+                     
+        </tr> 
 
 
+      </table>
+</div>
+ 		    
+ 
 
-	<!-- /* Imagen */ --> 
-		<div class="row"> 
-		 <label for="homepic">Imagen : dimensiones: (1200x800) ; peso < 1mb ; formato : jpg, png </label>
-		     <div class="input-field col s6 ">
-		 		<input  file-model="home.pic" id="homepic" type="file" name="homepic" accept="image/*">	
-			 </div>
-
- 		 <div class="input-field col s6 ">
-			<button  class="btn waves-effect waves-light right green"  type="button" ng-click="submit()" > Subir </button>
-
-			 </div>
-
-		</div> 
-
-
-	 
-		   
-	   
-
-<table class="striped" >
-  <thead  > 
-          <tr> 
-              <th>#</th>        
-              <th>Estado</th>           
-               <th>Imagen</th> 
-               <th>Posición</th> 
-               <th>Texto</th>   
-           </tr> 
-  </thead>  
-   <tr ng-repeat='img in imgs'>
-              <td>{{ $index + 1}}  </td>
-              <td> {{img.status}} </td>
-              <td> {{ img.image }} </td>
-              <td> {{ img.section }} </td>
-              <td> {{ img.text }} </td>
-  </tr> 
-
-
-</table>

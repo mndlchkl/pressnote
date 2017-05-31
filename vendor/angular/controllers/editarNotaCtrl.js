@@ -33,7 +33,7 @@
       $scope.submit = function() {
          // console.log(CKEDITOR.instances.body.getData());
        //   console.log(CKEDITOR.instances.editor1.getData());
-       //   $scope.note.body = CKEDITOR.instances.body.getData();
+         $scope.note.body = CKEDITOR.instances.body.getData();
           msgVal = '';
           ($scope.note.header == undefined) ? msgVal += ' titulo,': ''; //
           //  ($scope.note.subheader == undefined) ? msgVal += ' subtitulo,': ''; //
