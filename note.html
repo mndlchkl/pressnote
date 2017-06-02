@@ -1,0 +1,68 @@
+	
+	<h3>{{title}}  </h3>
+	<div>
+		<form id="postForm">
+	<!-- /*Encabezado*/ -->
+		<div class="row">
+	      <div class="input-field col s12 ">
+	        <input value = "{{note.header}}" ng-model="note.header" required class="validate" id="header" name="header" type="text"  >
+	          <label class="active" for="header">Encabezado o titulo (max. 40 caracteres)</label>
+	        </input>
+	      </div>
+	    </div>
+	<!-- /*SUB Encabezado*/ -->         
+	    <div class="row">
+	      <div class="input-field col s12 ">
+	        <label for="subheader">Sub titulo (max. 200 caracteres)<span id="subheader_count"></span></label>
+	        <textarea ng-model="note.subheader"  required form="postForm" class="materialize-textarea"  name="subheader" id="subheader"></textarea>
+	      </div>
+	    </div>
+
+
+<!-- /*Texto   Body */ -->
+        <div class="row">
+	      <div class="input-field col s12 ">
+	       <label for="body">Texto  <span id="body"></span></label> <br>
+	        <textarea ng-model="note.body"   required form="postForm" class="materialize-textarea"  name="editor1" id="body"></textarea>
+
+	      </div>
+	    </div>
+ 	<!-- /* Url */ --> 
+		<div class="row">
+	      <div class="input-field col s6 ">
+	        <input ng-model="note.link" type="text" id="link"  >
+	          <label for="link">Url</label>
+	    
+	      </div>
+
+	      
+	<!-- /* Imagen */ --> 
+		 
+		  <label for="pic">Imagen: dimensiones: (1000x1000) ; peso < 2mb ; formato : jpg, png </label>
+		     <div class="input-field col s6 ">
+		   
+				<input  file-model="note.pic" id="pic" type="file" name="pic" accept="image/*">
+				
+			 </div>
+		</div> 
+
+		<div class="row">
+	      <div class="input-field col s6 ">
+	        <input ng-model="note.author" type="text" id="author"  >
+	          <label for="author">Autor</label>
+	    
+	      </div>
+	      </div>
+	   
+<!-- /* Submit */ --> 
+		<div class="row">
+		     <div class="input-field col s12 ">
+			<button  class="btn waves-effect waves-light right green"  type="button" ng-click="submit()" >{{msgtxt}} </button>
+			</div>
+
+	    </div>
+	  		
+	 
+	</form>
+
+</div>

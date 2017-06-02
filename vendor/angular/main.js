@@ -6,7 +6,19 @@ app.config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'login.html',
         controller: 'loginCtrl'
-    }).when('/home', {
+    })
+    .when('/historial/:id', {
+        resolve: {
+            "check": function($location, $rootScope) {
+                if (!$rootScope.loggedIn) {
+                    $location.path('/');
+                }
+            }
+        },
+        templateUrl: 'note.html',
+        controller: 'noteCtrl'
+    })
+    .when('/home', {
         resolve: {
             "check": function($location, $rootScope) {
                 if (!$rootScope.loggedIn) {

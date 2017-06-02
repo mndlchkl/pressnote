@@ -10,7 +10,7 @@ $idnota = $updown['notaId'];
 		$stmt->bind_param("ii", $status,$idnota);
 		$stmt->execute();
 
-			if (! ($stmt->error == '') ) {
+		 if (! ($stmt->error == '') ) {
 	 	echo "Error al actualizar en la bd: ". $stmt->error;
 		}else
 		{
