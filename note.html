@@ -13,7 +13,7 @@
 	<!-- /*SUB Encabezado*/ -->         
 	    <div class="row">
 	      <div class="input-field col s12 ">
-	        <label for="subheader">Sub titulo (max. 200 caracteres)<span id="subheader_count"></span></label>
+	        <label class="active" for="subheader">Sub titulo (max. 200 caracteres)<span id="subheader_count"></span></label>
 	        <textarea ng-model="note.subheader"  required form="postForm" class="materialize-textarea"  name="subheader" id="subheader"></textarea>
 	      </div>
 	    </div>
@@ -22,23 +22,23 @@
 <!-- /*Texto   Body */ -->
         <div class="row">
 	      <div class="input-field col s12 ">
-	       <label for="body">Texto  <span id="body"></span></label> <br>
-	        <textarea ng-model="note.body"   required form="postForm" class="materialize-textarea"  name="editor1" id="body"></textarea>
+	       <label class="active" for="body">Texto  <span id="body"></span></label> <br>
+	      <textarea ng-model="note.body"   required form="postForm" class="materialize-textarea"  name="editor1" id="body"></textarea>
 
 	      </div>
 	    </div>
- 	<!-- /* Url */ --> 
+ 	<!-- /* Url */ 
 		<div class="row">
 	      <div class="input-field col s6 ">
 	        <input ng-model="note.link" type="text" id="link"  >
-	          <label for="link">Url</label>
+	          <label class="active" for="link">Url</label>
 	    
 	      </div>
-
+--> 
 	      
 	<!-- /* Imagen */ --> 
 		 
-		  <label for="pic">Imagen: dimensiones: (1000x1000) ; peso < 2mb ; formato : jpg, png </label>
+		  <label class="active" for="pic">Imagen: dimensiones: (1000x1000) ; peso < 2mb ; formato : jpg, png </label>
 		     <div class="input-field col s6 ">
 		   
 				<input  file-model="note.pic" id="pic" type="file" name="pic" accept="image/*">
@@ -48,8 +48,8 @@
 
 		<div class="row">
 	      <div class="input-field col s6 ">
-	        <input ng-model="note.author" type="text" id="author"  >
-	          <label for="author">Autor</label>
+	        <input   ng-model="note.author" type="text" id="author"  >
+	          <label class="active" for="author">Autor</label>
 	    
 	      </div>
 	      </div>

@@ -84,7 +84,8 @@
         <thead  > 
                 <tr> 
                     <th>#</th>        
-                    <th>Url Imagen</th>           
+                    <th>Url Imagen</th>  
+                    <th></th>         
                      <th>Descripción</th> 
                     
                  </tr> 
@@ -92,9 +93,11 @@
          <tr ng-repeat='rec in recursos'>
                     <td>{{ $index + 1}}  </td>
                    <td> 
-                   <a target="_blank" href="{{ rec.url }}">{{rec.url}}</a>
+                   <a target="_blank" href="{{ rec.url }}" data-thumbnail-src="{{ rec.url }}">{{rec.url}}</a>
                     
                   </td>
+
+  
                     <td> {{ rec.descripcion }} </td>
                      
         </tr> 

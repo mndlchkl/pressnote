@@ -33,7 +33,7 @@
       $scope.updateHome = function() {
           var formData = new FormData();
           for (var key in $scope.home) {
-              console.log(key, $scope.home[key]);
+             //  console.log(key, $scope.home[key]);
               formData.append(key, $scope.home[key]);
           }
           $http({
@@ -50,15 +50,15 @@
               if (response.data == 1) {
                   alert("Actualizado.");
               } else {
-                  alert(response);
+                  alert(response.data);
               }
               $scope.listarHome();
-              window.scrollTo(0, 0);
+             
           }
 
           function errorCallback(error) {
               alert(response.data);
-              window.scrollTo(0, 0);
+             
           }
       }
       /******SUBIR UNA IMAGEN AL SERVIDOR*******************/

@@ -1,4 +1,5 @@
 app.controller('participantesCtrl', function($scope, $http) {
+   
     $scope.title = "Listado de postulantes";
     $scope.listar = function() {
         var postulantes = {};
