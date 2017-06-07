@@ -1,15 +1,8 @@
  app.controller('loginCtrl', ['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope) {
      $scope.title = 'Login';
-   /*  $scope.submit = function(){
-       if ($scope.login.username=="admin" && $scope.login.pass=="admin") {
-              $rootScope.loggedIn=true;
-              $location.path("/home");
-          }else{
-            alert('nope');
-          }
 
-    } */
      $scope.submit = function() {
+        //console.log('submit login db.');
          if (($scope.login.username != undefined) && ($scope.login.pass != undefined)) {
             
              $http({
@@ -26,15 +19,15 @@
              function successCallback(response) {
                  $rootScope.loggedIn = true;
                   $location.path("/home");
-                /*
-                 console.log(response.data);
+               
+                // console.log(response.data);
                  if (response.data == 1) {
                      $rootScope.loggedIn = true;
                      $location.path("/home");
                  } else {
                      alert('nope');
                  }
-                 */
+                 
                  //  $scope.login = '';
                  //  location.reload();
              }
@@ -44,4 +37,15 @@
              }
          }
      } 
+
+       /*
+   $scope.submit = function(){
+       if ($scope.login.username=="admin" && $scope.login.pass=="admin") {
+              $rootScope.loggedIn=true;
+              $location.path("/home");
+          }else{
+            alert('nope');
+          }
+
+    }  */
  }]);

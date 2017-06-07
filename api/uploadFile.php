@@ -11,7 +11,7 @@ $name = strtr( str_replace(' ','',$desc), $unwanted_array ).time();
 $newdir = "$uploads_dir/$name.jpg";
 if ( move_uploaded_file($tmp_name, $newdir ) ){
 	include('conn.php');
-	$urlimg ="http://localhost/pressnote/img/rec/$name.jpg";
+	$urlimg ="img/rec/$name.jpg";
 	//$urlimg ="http://localhost/pressnote/img/rec/$name.jpg";
 	$stmt = $mysqli->prepare("INSERT INTO resources(url, descripcion,nameFile ) 
 						 VALUES (?, ?,?)");
