@@ -8,7 +8,7 @@
     </div>
 
      <div class="input-field col m6 ">
-          <input ng-model="file.desc" type="text" id="desc"  >
+          <input  ng-model="file.desc" type="text" id="desc"  >
           <label for="desc">Descripción de la imagen</label>
     </div>
   </div>
@@ -22,28 +22,29 @@
 </div>
 
 <div class="card">
-<h3> Recursos</h3>
+<h3> Listado</h3>
 {{sop}}
       <table class="striped" >
         <thead  > 
                 <tr> 
                     <th>#</th>        
                     <th>Url Imagen</th>  
-                    <th></th>         
                      <th>Descripción</th> 
+                      <th> </th> 
                     
                  </tr> 
         </thead>  
          <tr ng-repeat='rec in recursos'>
-                    <td>{{ $index + 1}}  </td>
-                   <td> 
-                   <a target="_blank" href="{{ rec.url }}" data-thumbnail-src="{{ rec.url }}">{{rec.url}}</a>
-                    
-                  </td>
-
-  
-                    <td> {{ rec.descripcion }} </td>
-                     
+              
+              <td>{{ $index + 1}}  </td>
+              <td> 
+                   <a target="_blank" href="{{ rec.url }}" data-thumbnail-src="{{ rec.url }}">{{rec.url}}</a>   
+              </td>
+              <td> {{ rec.descripcion }} </td>         
+                <td  >
+                 <button ng-click="deleteFile()" id="{{ rec.idresources }}" class="btn waves-effect waves-light red" >eliminar
+                </button>
+                  </td>            
         </tr> 
 
 

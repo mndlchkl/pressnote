@@ -5,7 +5,7 @@
 	<!-- /*Encabezado*/ -->
 		<div class="row">
 	      <div class="input-field col s12 ">
-	        <input value = "{{note.header}}" ng-model="note.header" required class="validate" id="header" name="header" type="text"  >
+	        <input value = "{{editnote.header}}" ng-model="editnote.header" required class="validate" id="header" name="header" type="text"  >
 	          <label class="active" for="header">Encabezado o titulo (max. 40 caracteres)</label>
 	        </input>
 	      </div>
@@ -14,7 +14,7 @@
 	    <div class="row">
 	      <div class="input-field col s12 ">
 	        <label class="active" for="subheader">Sub titulo (max. 200 caracteres)<span id="subheader_count"></span></label>
-	        <textarea ng-model="note.subheader"  required form="postForm" class="materialize-textarea"  name="subheader" id="subheader"></textarea>
+	        <textarea ng-model="editnote.subheader"  required form="postForm" class="materialize-textarea"  name="subheader" id="subheader"></textarea>
 	      </div>
 	    </div>
 
@@ -22,33 +22,31 @@
 <!-- /*Texto   Body */ -->
         <div class="row">
 	      <div class="input-field col s12 ">
-	       <label class="active" for="body">Texto  <span id="body"></span></label> <br>
-	      <textarea ng-model="note.body"   required form="postForm" class="materialize-textarea"  name="editor1" id="body"></textarea>
+	       <label class="active" for="ckEditarNota">Texto  <span id="body"></span></label> <br>
+	      <textarea  ng-model="editnote.body"  required form="postForm" class="materialize-textarea"  name="ckEditarNota" id="ckEditarNota">{{editnote.body}}</textarea>
 
 	      </div>
 	    </div>
- 	<!-- /* Url */ 
+ 
 		<div class="row">
 	      <div class="input-field col s6 ">
-	        <input ng-model="note.link" type="text" id="link"  >
-	          <label class="active" for="link">Url</label>
-	    
+	        <input ng-model="editnote.url"  type="text" id="link"  >
+	          <label class="active" for="link">Url  </label>
 	      </div>
---> 
+
 	      
-	<!-- /* Imagen */ --> 
-		 
+	 <!--
 		  <label class="active" for="pic">Imagen: dimensiones: (1000x1000) ; peso < 2mb ; formato : jpg, png </label>
 		     <div class="input-field col s6 ">
 		   
-				<input  file-model="note.pic" id="pic" type="file" name="pic" accept="image/*">
+				<input  file-model="editnote.pic" id="pic" type="file" name="pic" accept="image/*">
 				
-			 </div>
+			 </div>-->
 		</div> 
 
 		<div class="row">
 	      <div class="input-field col s6 ">
-	        <input   ng-model="note.author" type="text" id="author"  >
+	        <input   ng-model="editnote.author" type="text" id="author"  >
 	          <label class="active" for="author">Autor</label>
 	    
 	      </div>
@@ -57,7 +55,7 @@
 <!-- /* Submit */ --> 
 		<div class="row">
 		     <div class="input-field col s12 ">
-			<button  class="btn waves-effect waves-light right green"  type="button" ng-click="submit()" >{{msgtxt}} </button>
+			<button  class="btn waves-effect waves-light right green"  type="button" ng-click="updateNota()" >{{msgtxt}} </button>
 			</div>
 
 	    </div>

@@ -6,7 +6,7 @@
 
 <div class="col s6" >
 <button class="blue btn waves-effect waves-light" ng-click="listar()" > Actualizar.</button>
-<a href="#/editar">
+<a href="#/crearNota">
  <button  class="btn waves-effect waves-light green" >Nueva nota
 </button></a>
 </div>
@@ -20,9 +20,8 @@
               <th>Arriba</th>
                <th> </th>
               <th>Titulo</th> 
-              <th>link</th> 
               <th>autor</th>
-              <th>fecha de creación</th>
+              <th>Url imagen</th> 
           </tr> 
   </thead>  
    <tr ng-repeat='n in notas'>
@@ -30,16 +29,16 @@
 
  <td ng-click="changeup()"  ><input ng-model="chk" type="checkbox"  id="{{ n.id }}"  /><label  > {{ n.up }}</label>   </td>
 
-  <td ng-click="view()"  >
+  <td  >
  <a href="#/historial/{{ n.id  }}">
- <button id="{{ n.id }}" ng-model="view" class="btn waves-effect waves-light blue" >editar
+ <button  class="btn waves-effect waves-light blue" >editar
                 </button></a>
   </td>
 
               <td>{{ n.header }}  </td>
-              <td>{{ n.url }}  </td>
               <td>{{ n.author }}  </td>
-             <td>{{ n.created }}  </td>
+               <td>{{ n.url }}  </td>
+            
     </tr> 
 
 

@@ -27,7 +27,7 @@ app.config(function($routeProvider) {
             }
         },
         templateUrl: 'note.html',
-        controller: 'resourcesCtrl'
+        controller: 'noteCtrl'
     })
     .when('/home', {
         resolve: {
@@ -49,7 +49,7 @@ app.config(function($routeProvider) {
         },
         templateUrl: 'adminhome.html',
         controller: 'adminhomeCtrl'
-    }).when('/editar', {
+    }).when('/crearNota', {
         resolve: {
             "check": function($location, $rootScope) {
                 if (!$rootScope.loggedIn) {
@@ -57,8 +57,8 @@ app.config(function($routeProvider) {
                 }
             }
         },
-        templateUrl: 'editar.html',
-        controller: 'EditController'
+        templateUrl: 'crearNota.html',
+        controller: 'crearNotaCtrl'
     }).when('/historial', {
         resolve: {
             "check": function($location, $rootScope) {

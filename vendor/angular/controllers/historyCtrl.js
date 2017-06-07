@@ -19,6 +19,8 @@
               alert(response.data);
           }
       }
+        $scope.listar();
+
       /*PUBLICAR O DESPUBLICAR NOTA*/
       $scope.changeup = function() {
           var updown = {
@@ -47,5 +49,5 @@
               $scope.listar();
           }
       }
-         $scope.listar();
+       
   });
