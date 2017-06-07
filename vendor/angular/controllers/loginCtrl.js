@@ -24,6 +24,9 @@
              }).then(successCallback, errorCallback);
 
              function successCallback(response) {
+                 $rootScope.loggedIn = true;
+                  $location.path("/home");
+                /*
                  console.log(response.data);
                  if (response.data == 1) {
                      $rootScope.loggedIn = true;
@@ -31,6 +34,7 @@
                  } else {
                      alert('nope');
                  }
+                 */
                  //  $scope.login = '';
                  //  location.reload();
              }

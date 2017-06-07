@@ -1,11 +1,11 @@
   app.controller('homeCtrl', ['$scope', function($scope) {
       $scope.title = 'Inicio';
   }]);
+
   app.controller('adminhomeCtrl', ['$scope', '$http', function($scope, $http) {
       $scope.title = 'Administrar contenido del home.';
       
       $scope.listarHome = function() {
-          // var postulantes = {};
           $http({
               method: 'GET',
               url: 'api/listHome.php',
@@ -61,55 +61,4 @@
              
           }
       }
-      /******SUBIR UNA IMAGEN AL SERVIDOR*******************/
-      $scope.upload = function() {
-          var formData = new FormData();
-          for (var key in $scope.file) {
-              formData.append(key, $scope.file[key]);
-          }
-          $http({
-              transformRequest: angular.identity,
-              method: 'POST',
-              url: 'api/uploadFile.php',
-              data: formData,
-              headers: {
-                  'Content-Type': undefined
-              },
-          }).then(successCallback, errorCallback);
-
-          function successCallback(response) {
-              if (response.data == 1) {
-                $scope.file.desc="";
-                 $scope.file.pic="";
-                $scope.listarRecursos();
-                }
-               else {
-                  alert(response.data);
-              }
-          }
-
-          function errorCallback(error) {
-              alert(response.data);
-          }
-      }
-      /********************************************************/
      
-        $scope.listarRecursos = function() {
-        var recursos = {};
-        $http({
-            method: 'GET',
-            url: 'api/listResources.php',
-        }).then(successCallback, errorCallback);
-
-        function successCallback(response) {
-            $scope.recursos = response.data;
-            for (var key in recursos) {}
-              console.log($scope.recursos);
-        }
-
-        function errorCallback(error) {
-            alert(response.data);
-        }
-      }
-         $scope.listarRecursos();
-  }]);

@@ -13,7 +13,7 @@
                   items: ['Link', 'Unlink', 'Anchor']
               }, {
                   name: 'insert',
-                  items: ['Table', 'HorizontalRule', ]
+                  items: ['Image','Table', 'HorizontalRule', ]
               }, '/', {
                   name: 'styles',
                   items: ['Styles', 'Format', 'Font', 'FontSize']

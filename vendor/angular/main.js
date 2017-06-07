@@ -7,6 +7,17 @@ app.config(function($routeProvider) {
         templateUrl: 'login.html',
         controller: 'loginCtrl'
     })
+      .when('/recursos', {
+        resolve: {
+            "check": function($location, $rootScope) {
+                if (!$rootScope.loggedIn) {
+                    $location.path('/');
+                }
+            }
+        },
+        templateUrl: 'recursos.html',
+        controller: 'resourcesCtrl'
+    })
     .when('/historial/:id', {
         resolve: {
             "check": function($location, $rootScope) {
@@ -16,7 +27,7 @@ app.config(function($routeProvider) {
             }
         },
         templateUrl: 'note.html',
-        controller: 'noteCtrl'
+        controller: 'resourcesCtrl'
     })
     .when('/home', {
         resolve: {
