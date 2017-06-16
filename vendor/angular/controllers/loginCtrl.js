@@ -17,19 +17,16 @@
              }).then(successCallback, errorCallback);
 
              function successCallback(response) {
-                 $rootScope.loggedIn = true;
-                  $location.path("/home");
-               
-                // console.log(response.data);
+                 // console.log(response.data);
+                   $rootScope.loggedIn = true;
+                     $location.path("/home");
                  if (response.data == 1) {
                      $rootScope.loggedIn = true;
                      $location.path("/home");
                  } else {
                      alert('nope');
                  }
-                 
-                 //  $scope.login = '';
-                 //  location.reload();
+ 
              }
 
              function errorCallback(error) {

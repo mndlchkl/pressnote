@@ -18,6 +18,7 @@
           <tr> 
               <th>#</th>
               <th>Arriba</th>
+                  <th>Destacado</th>
                <th> </th>
               <th>Titulo</th> 
               <th>autor</th>
@@ -28,6 +29,9 @@
               <td>{{ $index + 1}}  </td>
 
  <td ng-click="changeup()"  ><input ng-model="chk" type="checkbox"  id="{{ n.id }}"  /><label  > {{ n.up }}</label>   </td>
+
+ <td ng-click="destacar()"  ><input ng-model="destacar" type="checkbox"  id="{{ n.id }}"  /><label  > {{ n.featured }}</label>   </td>
+
 
   <td  >
  <a href="#/historial/{{ n.id  }}">

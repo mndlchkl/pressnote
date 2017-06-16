@@ -1,18 +1,19 @@
-  app.controller('historyCtrl', function($scope, $http) {
-      $scope.title = 'Historial de notas';
+  app.controller('actividadesCtrl', function($scope, $http) {
+      $scope.title = 'Historial de actividades';
     
       $scope.listar = function() {
-          var notas = {};
+          var actividades = {};
           $http({
               method: 'GET',
-              url: 'api/listNotes.php',
+              url: 'api/listActividades.php',
           }).then(successCallback, errorCallback);
 
           function successCallback(response) {
-              $scope.notas = response.data;
-              for (var key in notas) {}
-            console.log($scope.notas);
-              //console.log(notas);
+              $scope.actividades = response.data;
+               console.log($scope.actividades);
+              for (var key in actividades) {}
+           
+              //console.log(actividades);
           }
 
           function errorCallback(error) {
@@ -35,7 +36,7 @@
                   'Content-Type': 'application/x-www-form-urlencoded'
               },
               method: 'POST',
-              url: 'api/updown_note.php',
+              url: 'api/updown_actividad.php',
               data: serialUpdown
           }).then(successCallback, errorCallback);
 
@@ -63,7 +64,7 @@
                   'Content-Type': 'application/x-www-form-urlencoded'
               },
               method: 'POST',
-              url: 'api/destacarNota.php',
+              url: 'api/destacarActividad.php',
               data: serialUpdown
           }).then(successCallback, errorCallback);
 

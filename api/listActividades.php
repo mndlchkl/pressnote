@@ -3,7 +3,7 @@
  
  include('conn.php');
 
-$q = "select * from notes  order by created desc"; 
+$q = "select * from EVENTS  order by created desc"; 
        //ESTE ARRAY ALMACENARA LOS REGISTROS
 
 $datos = array();

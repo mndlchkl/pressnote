@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "godzuki";
-$dbname = "ecpm";
+$dbname = "xsynf";
  
 $mysqli = new mysqli($servername,$username,$password,$dbname);
 // Check connection

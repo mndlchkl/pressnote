@@ -69,6 +69,36 @@ app.config(function($routeProvider) {
         },
         templateUrl: 'historial.html',
         controller: 'historyCtrl'
+    }).when('/actividades', {
+        resolve: {
+            "check": function($location, $rootScope) {
+                if (!$rootScope.loggedIn) {
+                    $location.path('/');
+                }
+            }
+        },
+        templateUrl: 'actividades.html',
+        controller: 'actividadesCtrl'
+    }).when('/actividades/:id', {
+        resolve: {
+            "check": function($location, $rootScope) {
+                if (!$rootScope.loggedIn) {
+                    $location.path('/');
+                }
+            }
+        },
+        templateUrl: 'actividad.html',
+        controller: 'actividadCtrl'
+    }).when('/crearActividad', {
+        resolve: {
+            "check": function($location, $rootScope) {
+                if (!$rootScope.loggedIn) {
+                    $location.path('/');
+                }
+            }
+        },
+        templateUrl: 'crearActividad.html',
+        controller: 'crearActividadCtrl'
     }).when('/participantes', {
         resolve: {
             "check": function($location, $rootScope) {
