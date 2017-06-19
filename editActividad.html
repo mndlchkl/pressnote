@@ -1,17 +1,18 @@
 	
 	<h3>{{title}}  </h3>
+
 	<div>
 		<form id="postForm">
 	<!-- /*Encabezado*/ -->
 		<div class="row">
 	      <div class="input-field col m6 s12 ">
 	        <input  ng-model="actividad.name" required class="validate" id="name" name="name" type="text">
-	          <label for="name">Nombre</label>
+	          <label class="active" for="name">Nombre</label>
 	     
 	      </div>
  
 	      <div class="input-field col m6 s12 ">
-	        <label for="place">Lugar<span id="place_count"></span></label>
+	        <label class="active" for="place">Lugar<span id="place_count"></span></label>
 	        <textarea ng-model="actividad.place"  required form="postForm" class="materialize-textarea"  name="place" id="place"></textarea>
 	      </div>
 	    </div>
@@ -23,14 +24,15 @@
   						 	ng-model="actividad.datetimestart"
   							id="datetimestart" 
   							name="input" 
-  							type="date">
-		          <label for="datetimestart">Dia Inicio</label>
+  							type="date"
+  							value="{{actividad.datetimestart}}">
+		          <label class="active" for="datetimestart">Dia Inicio</label>
 		         
 		    	</div>
 	    		
 	    		<div class="col m6">
 		    		 <input maxlength="10" ng-model="actividad.timetimestart" required  id="timetimestart" name="timetimestart" type="time">
-		          <label for="timetimestart">Hora Inicio</label>
+		          <label class="active" for="timetimestart">Hora Inicio</label>
 		    	</div>
 	    	
 
@@ -38,11 +40,11 @@
 	    	<div class="col m6 s12">
 				<div class="col m6">
 	    		 	<input maxlength="10" ng-model="actividad.datetimeend" required class="validate" id="datetimeend" name="datetimeend" type="date">
-	          	 	<label for="datetimeend">Dia Termino</label>
+	          	 	<label class="active" for="datetimeend">Dia Termino</label>
 				</div>
 				<div class="col m6">
 					<input maxlength="10" ng-model="actividad.timetimeend" required class="validate" id="timetimeend" name="timetimeend" type="time">
-	          	 	<label for="timetimeend">Hora Termino</label>
+	          	 	<label class="active" for="timetimeend">Hora Termino</label>
 				</div>
 	    	</div>
 	    </div>
@@ -51,7 +53,7 @@
 <!-- /*Texto   descr */ -->
         <div class="row">
 	      <div class="input-field col s12 ">
-	       <label for="descr">Descripcion  <span id="descr"></span></label> <br>
+	       <label class="active" for="descr">Descripcion  <span id="descr"></span></label> <br>
 	        <textarea ng-model="actividad.descr"   required form="postForm" class="materialize-textarea"    id="descr"></textarea>
 
 	      </div>
@@ -61,13 +63,13 @@
 		<div class="row">
 	      <div class="input-field col m6 s12">
 	        <input ng-model="actividad.imgurl" type="text" id="imgurl"  >
-	          <label for="imgurl">Url Imagen de portada (FLYER) </label>
+	          <label class="active" for="imgurl">Url Imagen de portada (FLYER) </label>
 	      </div>
 
 	 
 	      <div class="input-field col m6 ">
 	        <input ng-model="actividad.responsable" type="text" id="responsable"  >
-	          <label for="responsable">Responsable</label>
+	          <label class="active" for="responsable">Responsable</label>
 	    
 	      </div>
 	    </div>
@@ -75,7 +77,7 @@
 <!-- /* Submit */ --> 
 		<div class="row">
 		     <div class="input-field col s12 ">
-			<button  class="btn waves-effect waves-light right green"  type="button" ng-click="submitactividad()" >{{msgtxt}} </button>
+			<button  class="btn waves-effect waves-light right green"  type="button" ng-click="updateactividad()" >{{msgtxt}} </button>
 			</div>
 
 	    </div>
@@ -85,4 +87,4 @@
 
 </div>
 
- 
+	

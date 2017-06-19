@@ -87,8 +87,8 @@ app.config(function($routeProvider) {
                 }
             }
         },
-        templateUrl: 'actividad.html',
-        controller: 'actividadCtrl'
+        templateUrl: 'editActividad.html',
+        controller: 'editActividadCtrl'
     }).when('/crearActividad', {
         resolve: {
             "check": function($location, $rootScope) {

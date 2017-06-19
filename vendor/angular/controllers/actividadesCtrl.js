@@ -23,10 +23,10 @@
         $scope.listar();
 
       /*PUBLICAR O DESPUBLICAR NOTA*/
-      $scope.changeup = function() {
+      $scope.changestatus = function() {
           var updown = {
-              "notaId": this.n.id,
-              "status": (this.n.up == 1) ? 0 : 1,
+              "actividadId": this.a.id,
+              "status": (this.a.up == 1) ? 0 : 1,
           }
           var serialUpdown = $.param({
               "updown": JSON.stringify(updown)
@@ -51,32 +51,39 @@
           }
       }
 
-      /*PUBLICAR O DESPUBLICAR NOTA*/
-      $scope.destacar = function() {
-          var ndata = {
-              "notaId": this.n.id,
-          }
-          var serialUpdown = $.param({
-              "ndata": JSON.stringify(ndata)
-          });
-          $http({
-              headers: {
-                  'Content-Type': 'application/x-www-form-urlencoded'
-              },
-              method: 'POST',
-              url: 'api/destacarActividad.php',
-              data: serialUpdown
-          }).then(successCallback, errorCallback);
+        /******ELIMINAR IMAGEN DEL SERVIDOR*******************/
+     $scope.deleteActividad = function() {
+         var r = confirm('Seguro de eliminar el archivo? asegurese de que no este siendo usado en alguna nota o inicio de la pagina');
+         if (r == true) {
+             var request;
+             var rec = $.param({
+                 "rec": JSON.stringify(this.rec)
+             });
+             if (request) {
+                 request.abort();
+             }
+             $http({
+                 headers: {
+                     'Content-Type': 'application/x-www-form-urlencoded'
+                 },
+                 method: 'POST',
+                 url: 'api/deleteFile.php',
+                 data: rec
+             }).then(successCallback, errorCallback);
 
-          function successCallback(response) {
-              // console.log(response.data);
-              $scope.listar();
-          }
+             function successCallback(response) {
+                 if (response.data == 1) {} else {
+                     alert(response.data);
+                 }
+                 $scope.listarRecursos();
+             }
 
-          function errorCallback(error) {
-              alert(response.data);
-              $scope.listar();
-          }
-      }
+             function errorCallback(error) {
+                 console.log(error);
+                 $scope.listarRecursos();
+             }
+         }
+     }
+ 
        
   });
